@@ -1,0 +1,66 @@
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/global';
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.inventory-item {
+    border-top: $Cloud 2px solid;
+    padding: 2vh 4vw;
+
+    @include tablet {
+        display: none;
+    }
+
+    &--mobile {
+        display: flex;
+        gap: 10%;
+
+        &-column {
+            width: 45%;
+        }
+    }
+
+    &__table-header {
+        margin-top: 1vh;
+    }
+
+    &__details {
+        width: 40%;
+    }
+
+    &__in-stock {
+        @include status;
+        color: #158463;
+        background-color: rgba(21, 132, 99, 0.07);
+    }
+
+    &__out-of-stock {
+        @include status;
+        color: #C94515;
+        background-color: rgba(201, 69, 21, 0.07);
+    }
+
+    &__direct {
+        display: inline;
+        vertical-align: bottom;
+    }
+
+    &__link {
+        color: $Instock-Indigo;
+        text-decoration: none;
+        display: inline;
+    }
+
+    &__manage {
+        display: flex;
+        justify-content: space-between;
+
+        &-icon {
+            height: 2em;
+
+			&:hover {
+				cursor: pointer;
+			}
+        }
+    }
+}

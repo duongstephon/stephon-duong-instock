@@ -1,0 +1,80 @@
+@use './variables' as *;
+
+@mixin mobile {
+    @media (min-width: 320px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1280px)  {
+        @content;
+    }
+}
+
+//tablet & desktop: p1, p2, p3
+//mobile: m-p1, m-p2, m-p3
+
+@mixin p1 {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+@mixin m-p1 {
+    font-size: 15px;
+    line-height: 26px;
+}
+
+@mixin p2 {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+@mixin m-p2 {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+@mixin p3 {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+@mixin m-p3 {
+    font-size: 11px;
+    line-height: 16px;
+}
+
+@mixin card {
+    position: absolute;
+    left: 4.27%;
+    right: 4.27%;
+    top: 18%;
+    background: white;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+}
+
+@mixin status {
+    padding: 0.2rem 0.5rem;
+    text-transform: uppercase;
+    border-radius: 20px;
+    width: fit-content;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+// button styling
+@mixin primary-button {
+    background-color: $Instock-Indigo;
+    color: $White;
+    border-radius: 20px;
+    border: none;
+}
+

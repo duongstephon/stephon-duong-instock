@@ -1,0 +1,177 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss';
+@use '../../styles/partials/variables.scss';
+@use '../../styles/partials/fonts.scss';
+
+p {
+    @include mixins.m-p2;
+    margin: 0.2rem 0rem;
+
+    @include mixins.tablet {
+        @include mixins.p2;
+    }
+}
+
+.warehouse-inventory {
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem 1.5rem;
+    border-top: solid 1px variables.$Cloud;
+
+    @include mixins.tablet {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.7rem 2.25rem;
+        border-top: none;
+        border-bottom: solid 1px variables.$Cloud;
+    }
+
+    &__item-info {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+
+        @include mixins.tablet {
+            justify-content: flex-start;
+            width: 100%;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @include mixins.tablet {
+            display: contents;
+        }
+        
+        @include mixins.desktop {
+            width: 100%;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        @include mixins.tablet {
+            inline-size: 100%;
+        }
+
+        @include mixins.desktop {
+            inline-size: 15rem;
+        }
+    }
+
+    &__item-name {
+        color: variables.$Instock-Indigo;
+        font-weight: 600;
+    }
+
+    &__item-category {
+        @include mixins.tablet {
+            inline-size: 23%;
+        }
+
+        @include mixins.desktop {
+            inline-size: 21%;
+        }
+    }
+
+    &__item-quantity {
+        @include mixins.tablet {
+            inline-size: 6rem;
+        }
+    }
+
+    &__block {
+        margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            margin: 0rem;
+            width: 26%
+        }
+
+        @include mixins.desktop {
+            width: 26.5%;
+        }
+    }
+
+    &__status-block {
+        margin-bottom: 0.65rem;
+        width: 30.5%;
+
+        @include mixins.desktop {
+            width: 29.5%;
+        }
+    }
+
+    &__status-in-stock {
+        @include mixins.status;
+        color: variables.$Green;
+        background: rgba(21, 132, 99, 0.07);
+        width: 4.1rem;
+
+        @include mixins.tablet {
+            inline-size: 4.5rem;
+        }
+
+        @include mixins.desktop {
+            margin-right: 15.9rem;
+        }
+    }
+
+    &__status-out-of-stock {
+        @include mixins.status;
+        color: variables.$Red;
+        background: rgba(201, 69, 21, 0.07);
+        width: 5.8rem;
+
+        @include mixins.tablet {
+            inline-size: 5.8rem;
+            margin-right: 5.7rem;
+        }
+
+        @include mixins.desktop {
+            margin-right: 14.4rem;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0rem 0rem 0rem;
+
+        @include mixins.tablet {
+            width: 10%;
+            justify-content: space-between;
+            margin: 0rem;
+        }
+
+        @include mixins.desktop {
+            width: 6%;
+        }
+    }
+
+    &__header {
+        @include mixins.tablet {
+            display: none;
+        }
+    }
+
+	&__link {
+		background-image: url('../../assets/icons/edit-24px.svg');
+		width: calc(24/16 * 1rem);
+		height: calc(24/16 * 1rem);
+	}
+
+	&__delete {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

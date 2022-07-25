@@ -1,0 +1,84 @@
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/global';
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.inventory-item-tablet {
+    display: none;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    border-top: $Cloud 2px solid;
+    padding: 2vh 4vw;
+    justify-content: space-between;
+    align-items: center;
+
+    &__link {
+        @include tablet {
+            width: 8em;
+            color: $Instock-Indigo;
+            text-decoration: none;
+            display: inline;
+        }
+    }
+
+    &__details {
+        width: 8em;
+        display: inline;
+        text-align: left;
+    }
+
+    &__direct {
+        display: inline;
+        vertical-align: bottom;
+    }
+
+    &__category {
+        width: 6em;
+        text-align: left;
+        margin-left: 1%;
+    }
+
+    &__in-stock {
+        width: 7em;
+        @include status;
+        color: #158463;
+        background-color: rgba(21, 132, 99, 0.07);
+    }
+
+    &__out-of-stock {
+        width: 10em;
+        @include status;
+        color: #C94515;
+        background-color: rgba(201, 69, 21, 0.07);
+        margin-top: 1.5vh;
+    }
+
+    &__quantity {
+        text-align: left;
+        width: 5em;
+        margin-left: 4%;
+    }
+
+    &__warehouse {
+        margin-right: 2%;
+        width: 6em;
+    }
+
+    &__manage {
+
+        @include tablet {
+            gap: 25%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-icon {
+            height: 2em;
+
+			&:hover {
+				cursor: pointer;
+			}
+        }
+    }
+}

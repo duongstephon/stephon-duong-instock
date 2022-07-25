@@ -1,0 +1,105 @@
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/global';
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.warehouse-list {
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        padding: 3.65vh 4vw;
+
+        @include tablet {
+            padding: 4.5vh 4vw;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @include desktop {
+            padding: 2.9vh 4vw;
+        }
+
+        &--top-right {
+            display: flex;
+            flex-direction: column; 
+
+            @include tablet {
+                width: 60%;
+                flex-direction: row;
+                display: flex;
+                gap: 6%;
+                justify-content: flex-end;
+            }
+
+            @include desktop {
+                gap: 3%;
+            }
+        }
+
+        &-title {
+            @include tablet {
+                margin: 0;
+            }
+        }
+
+        &-search {
+            background-image: url('../../assets/icons/search-24px.svg');
+            background-repeat: no-repeat;
+            background-position: 96% 50%;
+            background-size: 1.7em;
+            padding: 1.2vh 2vw;
+            border: 1px solid #BDC5D5;
+            border-radius: 20px;
+            margin-bottom: 2vh;
+
+            @include tablet {
+                height: 4vh;
+                background-position: 92% 50%;
+                margin-bottom: 0;
+                // margin-left: 13em;
+                width: 15em;
+            }
+
+            @include desktop {
+                width: 45%;
+            }
+        }
+
+        &-cta {
+            text-align: center;
+            padding: 0.7vh 2vw;
+            @include primary-button;
+            font-size: 1em;
+
+            @include tablet {
+                height: 4vh;
+            }
+        }
+    }
+    &__column-titles {
+        display: none;
+
+        @include tablet {
+            background-color: $Light-Grey;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 2vh 4vw;
+        }
+    }
+
+    &__column-title {
+        display: inline;
+        margin: 0;
+
+        &-icon {
+            display: inline;
+            vertical-align: bottom;
+        }
+
+        &--last {
+            padding-top: .6vh;
+        }
+    }
+}

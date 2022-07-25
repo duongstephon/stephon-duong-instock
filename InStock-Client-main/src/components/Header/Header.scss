@@ -1,0 +1,90 @@
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/variables';
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/global';
+
+
+.header {
+    background-color: variables.$Graphite;
+    width: 100%;
+    height: 13rem;
+    z-index: 0;
+
+    @include mixins.tablet {
+        display: flex;
+        justify-content: space-between; 
+        height: 14rem;
+    }
+    
+    &__logo {
+        padding: 2rem 0 0.5rem;
+        width: 8.5rem;
+        display: block;
+        margin: auto;
+
+        @include mixins.tablet {
+            width: 10rem;
+            padding: 0;
+            margin-left: 3rem;
+            margin-top: 2rem;
+        }
+
+        @include mixins.desktop {
+            width: 10rem;
+            margin-left: 6rem;
+            margin-top: 3rem;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 1rem;
+
+        @include mixins.tablet {
+            padding-top: 2.5rem;
+            margin-right: 1rem;
+        }
+
+        @include mixins.desktop {
+            margin-right: 6rem;
+            padding-top: 3.5rem;
+
+        }
+
+        &--link {
+            text-align: center;
+            color: variables.$Cloud;
+            padding-top: 0.2rem;
+            background-color: transparent;
+            width: 10rem;
+            height: 2.1rem;
+            border-radius: 20px;
+
+            @include mixins.tablet {
+                width: 9rem;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                color: variables.$White;
+                background: variables.$Instock-Black;
+
+                @include mixins.tablet {
+                    width: 9rem;
+                }
+            }
+        }
+
+        &--active {
+            text-decoration: none;
+            color: variables.$White;
+            background: variables.$Instock-Black;
+
+            @include mixins.tablet {
+                width: 9rem;
+            }
+        }
+    }
+
+}

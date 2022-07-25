@@ -1,0 +1,130 @@
+@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins' as *;
+
+.delete-warehouse {
+    box-sizing: border-box;
+    background-color: rgba(19,24,44,0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    top: 0;
+    left: 0;
+	
+	@include tablet {
+    	flex-direction: center;
+	}
+
+	&__card{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		position: fixed;
+		box-sizing: border-box;
+		background-color: variables.$Light-Grey;
+		height: 41.7rem;
+		width: 100%;
+		padding: 1rem;
+
+		@include tablet {
+			width: calc(100% - 6rem);
+			height: 16.5rem;
+			top: 0;
+			left: 50%;
+			margin: 14rem calc(-1 * calc(50% - 3rem));
+			border-radius: 3px;
+			box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+			max-width: 45rem;
+		}
+	}
+
+	&__x-button {
+		box-sizing: border-box;
+		align-self: flex-end;
+		padding: 0;
+		border: 0;
+		height: calc(24/16 * 1rem);
+		width: calc(24/16 * 1rem);
+		margin: -3px -3px 0 0;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	&__title {
+		@include tablet {
+			margin: 0 3rem 1rem;
+		}
+	}
+
+	&__text {
+		margin: 0;
+		font-size: calc(15/16 * 1rem);
+		line-height: calc(26/16 * 1rem);
+		color: variables.$Instock-Black;
+
+		@include tablet {
+			margin: 0 3rem;
+			font-size: 1rem;
+			line-height: calc(28/16 * 1rem);
+		}
+	}
+
+	&__buttons-container {
+		margin-top: auto;
+		display: flex;
+		justify-content: space-between;
+
+		@include tablet {
+			justify-content: flex-end;
+			margin-right: calc(48/16 * 1rem);
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	&__button-cancel, &__button-delete {
+		width: calc(50% - 0.5rem);
+		height: calc(36/16 * 1rem);
+		margin: calc(8/16 * 1rem) 0;
+		padding: 0;
+		border: none;
+		border-radius: 20px;
+		font-family: inherit;
+		text-transform: capitalize;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		@include tablet {
+			width: 4.5rem;
+			margin-left: 1rem;
+		}
+	}
+
+	&__button-cancel {
+		border: 0.05rem solid variables.$Cloud;
+
+		&:hover {
+			border-color: variables.$Instock-Indigo;
+			color: variables.$Instock-Indigo;
+		}
+	}
+
+	&__button-delete {
+		background-color: variables.$Red;
+		color: variables.$White;
+
+		&:hover {
+			background-color: variables.$Graphite;
+		}
+	}
+}
+
+@media (min-width: 834px) {
+
+	.delete-warehouse__card {
+		margin: 14rem -22.5rem; 
+	}
+}

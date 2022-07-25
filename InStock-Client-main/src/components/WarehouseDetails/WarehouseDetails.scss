@@ -1,0 +1,214 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss';
+@use '../../styles/partials/variables.scss';
+@use '../../styles/partials/fonts.scss';
+
+p {
+    @include mixins.m-p2;
+    margin: 0rem;
+
+    @include mixins.tablet {
+        @include mixins.p2;
+    }
+}
+
+h4 {
+    margin: 0rem;
+}
+
+.single-warehouse {
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        border-bottom: solid 1px variables.$Cloud;
+
+        @include mixins.tablet {
+            padding: 4rem 2.25rem 2rem 2.25rem;
+            margin-top: -2.6rem;
+        }
+
+        @include mixins.desktop {
+            padding: 1.5rem 2.5rem;
+            margin-top: -0.5rem;
+        }
+    }
+
+    &__title-arrow {
+        display: flex;
+    }
+
+    &__title {
+        margin: 0rem 0rem 0rem 0.5rem;
+    }
+
+    &__edit {
+        color: variables.$White;
+        border-radius: 50%;
+        padding: 0.4rem 0.4rem 0.2rem 0.4rem;
+        background-color: variables.$Instock-Indigo;
+
+        @include mixins.tablet {
+            margin-left: 40%;
+            display: flex;
+            border-radius: 20px;
+            padding: 0.5rem 0.8rem;
+            justify-content: space-between;
+            width: 5rem;
+        }
+
+        @include mixins.desktop {
+            margin-left: 66%;
+        }
+    }
+
+    &__arrow {
+        margin-top: 0.5rem;
+    }
+
+    &__edit-image {
+        filter: brightness(0) invert(1);
+    }
+
+    &__edit-word {
+        display: none;
+
+        @include mixins.tablet {
+            display: contents;
+            font-family: 'Titillium-Web', sans-serif;
+        }
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            align-items: center;
+            padding: 1.5rem 2.25rem;
+            justify-content: space-between;
+        }
+
+        @include mixins.desktop {
+            padding: 1.5rem 2.5rem;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        @include mixins.tablet {
+            margin: 0rem;
+            padding: 0rem 0rem 0rem 3rem;
+            justify-content: space-between;
+            width: 60%;
+            border-left: solid 1px variables.$Cloud;
+        }
+    }
+
+    &__address {
+        margin-bottom: 1.5rem;
+
+        @include mixins.tablet {
+            margin: 0rem;
+            width: 8rem;
+        }
+    }
+
+    &__contact-info {
+        width: 100%;
+
+        @include mixins.desktop {
+            width: 18rem;
+        }
+    }
+
+    &__tablet-desktop {
+        display: none;
+
+        @include mixins.tablet {
+            display: contents;
+        }
+    }
+
+    &__table-headers {
+        display: flex;
+        padding: 0.7rem 2.25rem;
+        width: 100%;
+        background-color: variables.$Light-Grey;
+    }
+
+    &__item-header {
+        display: flex;
+        align-items: center;
+        inline-size: 24%;
+
+        @include mixins.desktop {
+            inline-size: 25%;
+        }
+    }
+
+    &__category-header {
+        display: flex;
+        align-items: center;
+        inline-size: 22%;
+
+        @include mixins.desktop {
+            inline-size: 20%;
+        }
+    }
+
+    &__status-header {
+        display: flex;
+        align-items: center;
+        inline-size: 26%;
+
+        @include mixins.desktop {
+            inline-size: 27.5%;
+        }
+    }
+
+    &__quantity-header {
+        display: flex;
+        align-items: center;
+        inline-size: 18%;
+
+        @include mixins.desktop {
+            inline-size: 15.5%;
+        }
+    }
+
+    &__action-header {
+        inline-size: 10%;
+        text-align: end;
+        margin: 0;
+
+        @include mixins.desktop {
+            inline-size: 12%;
+        }
+    }
+}
+
+.quantity-tablet {
+    @include mixins.desktop {
+        display: none;
+    }
+}
+
+.quantity-desktop {
+    @include mixins.tablet {
+        display: none;
+    }
+
+    @include mixins.desktop {
+        display: contents;
+    }
+}

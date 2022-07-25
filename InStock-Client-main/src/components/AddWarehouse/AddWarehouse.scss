@@ -1,0 +1,160 @@
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/variables';
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/global';
+
+a {
+    text-decoration: none;
+}
+
+textarea {
+    font-family: 'Titillium-Web';
+    overflow: hidden;
+    resize: none;
+    border-radius: 20px;
+    border-color: variables.$Cloud;
+    width: 100%;
+    height: 30px;
+    padding: 0.2rem 0 0 1rem;;
+}
+
+.add-warehouse {
+    &__title {
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+        border-bottom: 0.05rem solid variables.$Cloud;
+
+        @include mixins.tablet {
+            justify-content: start;
+            padding-left: 2rem;
+        }
+
+        @include mixins.desktop {
+            padding: 0.5rem 0 0.5rem 4rem;
+        }
+    }
+
+    &__arrow {
+        margin-top: 1.5rem;
+        margin-right: 1rem;
+
+        @include mixins.tablet {
+            margin-top: 1.8rem;
+            margin-right: 1rem;
+        }
+    }
+
+    &__form {
+
+        @include mixins.tablet {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 1.5rem 0;
+        }
+    }
+
+    &__warehouse--detail, &__contact--detail {
+        padding: 0.5rem 2rem 1.5rem;
+
+        @include mixins.tablet {
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        @include mixins.desktop {
+            padding: 0 4rem;
+        }
+    }
+
+    &__warehouse--detail {
+        border-bottom: 0.05rem solid variables.$Cloud;
+
+        @include mixins.tablet {
+            border-bottom: 0;
+            border-right: 0.05rem solid variables.$Cloud;
+        }
+    }
+
+    &__subtitle {
+        @include mixins.tablet {
+            margin-top: 0;
+        }
+    }
+
+    &__labels {
+       margin-bottom: 0.4rem;
+
+       @include mixins.desktop {
+           margin-top: 1rem;
+        }
+    }
+
+    &__submit {
+        height: 80px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: variables.$Light-Grey;
+    
+        &--add {
+            height: 2.5rem;
+            font-weight: 600;
+            background-color: variables.$Instock-Indigo;
+            color: variables.$White;
+            border: none;
+            border-radius: 20px;
+            width: 9rem;
+
+            &:hover {
+                background-color: variables.$Graphite;
+            }
+        }
+
+        &--cancel {
+            height: 2.5rem;
+            font-weight: 600;
+            background-color: variables.$White;
+            color: variables.$Slate;
+            border: 0.05rem solid variables.$Cloud;
+            border-radius: 20px;
+            width: 9rem;
+            padding: 0.4rem 0 0 3rem;
+
+            &:hover {
+                border-color: variables.$Instock-Indigo;
+                color: variables.$Instock-Indigo;
+            }
+
+            @include mixins.tablet {
+                width: 5rem;
+                margin-right: 1rem;
+                padding: 0.4rem 0 0 1rem;
+            }
+        }
+
+        @include mixins.tablet {
+            justify-content: end;
+            padding-right: 2rem;
+        }
+
+        @include mixins.desktop {
+            padding-right: 4rem;
+        }
+    }
+
+    &__error {
+        border-color: variables.$Red;
+    }
+
+    &__warning {
+        background: url('../../assets/icons/error-24px.svg') no-repeat 0.2rem;
+        padding-left: 2rem;
+        color: variables.$Red;
+        font-size: 13px;
+
+        &--hide {
+            display: none;
+        }
+    }
+}
