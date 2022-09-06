@@ -6,7 +6,7 @@ A CRUD application that allows users to view warehouse information, as well as i
 delete warehouses or inventory items. In-Stock was made by a team of 4, developped in a 1 week timespan, using React.js, Javascript, HTML/CSS, and 
 with GET, POST, PATCH and DELETE functionality with Axios, along with responsive design.
 
-Please see "duongstephon/instock-api" to see back-end repository
+Please see https://github.com/duongstephon/instock-api to see back-end repository
 
 ## Installation Instructions
 
